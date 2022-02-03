@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CurrencyConverter</string>
+    <string name="image">Image</string>
+    <string name="amount">Enter the amount to be converted:</string>
+    <string name="image1">image</string>
+    <string name="amountt">Enter the amount:</string>
 </resources>
