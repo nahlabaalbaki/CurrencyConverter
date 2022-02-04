@@ -12,39 +12,34 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    RadioGroup radiogroup;
-    RadioButton radiobutton1;
-    RadioButton radiobutton2;
+    RadioGroup radioGroup;
+    RadioButton radioButton;
     EditText number;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        number = findViewById(R.id.num);
-        radiobutton1=findViewById(R.id.r1);
-        radiobutton2=findViewById(R.id.r2);
-
-
+        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+        number = (EditText) findViewById(R.id.num);
 }
     public void Convert(View view) {
 
         Double total;
         Double amount = Double.parseDouble(number.toString());
 
-        if (radiobutton1.isChecked()) {
+        int selectedId = radioGroup.getCheckedRadioButtonId();
+        radioButton = findViewById(selectedId);
 
+        if (radioButton.getText().equals("USD"))
             total = amount * 22000;
-            Toast.makeText(getApplicationContext(), total.toString(), Toast.LENGTH_SHORT).show();
-        }
 
-        else if (radiobutton2.isChecked()) {
+        else{
 
             total = amount / 22000;
-            Toast.makeText(getApplicationContext(), total.toString(), Toast.LENGTH_SHORT).show();
         }
+        Toast.makeText(getApplicationContext(), total.toString(), Toast.LENGTH_SHORT).show();
     }
 }
 
