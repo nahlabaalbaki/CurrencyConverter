@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         Double amount = Double.parseDouble(number.toString());
 
         int selectedId = radioGroup.getCheckedRadioButtonId();
-        radioButton = findViewById(selectedId);
+        radioButton = (RadioButton) findViewById(selectedId);
 
         if (radioButton.getText().equals("USD"))
             total = amount * 22000;
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
             total = amount / 22000;
         }
-        Toast.makeText(getApplicationContext(), total.toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), total.toString(),Toast.LENGTH_SHORT).show();
     }
 }
 
