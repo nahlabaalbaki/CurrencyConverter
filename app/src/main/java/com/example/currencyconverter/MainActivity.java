@@ -27,33 +27,25 @@ public class MainActivity extends AppCompatActivity {
         radiobutton1=findViewById(R.id.r1);
         radiobutton2=findViewById(R.id.r2);
 
-        Button buttonApply = findViewById(R.id.button_apply);
 
-        buttonApply.setOnClickListener(new View.OnClickListener(){
+}
+    public void Convert(View view) {
 
-            @Override
-            public void onClick(View view) {
-                Double total;
-                Double amount = Double.parseDouble(number.toString());
+        Double total;
+        Double amount = Double.parseDouble(number.toString());
 
-                if (radiobutton1.isChecked()) {
+        if (radiobutton1.isChecked()) {
 
-                    total = amount * 22000;
-                    Toast.makeText(getApplicationContext(), total.toString(), Toast.LENGTH_SHORT).show();
-                }
-
-                else if (radiobutton2.isChecked()) {
-
-                    total = amount / 22000;
-                    Toast.makeText(getApplicationContext(), total.toString(), Toast.LENGTH_SHORT).show();
-                }
-
-            }
+            total = amount * 22000;
+            Toast.makeText(getApplicationContext(), total.toString(), Toast.LENGTH_SHORT).show();
         }
-        );
 
+        else if (radiobutton2.isChecked()) {
+
+            total = amount / 22000;
+            Toast.makeText(getApplicationContext(), total.toString(), Toast.LENGTH_SHORT).show();
+        }
     }
-
 }
 
 
